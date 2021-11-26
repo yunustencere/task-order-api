@@ -35,7 +35,7 @@ class TaskController extends Controller
     public function store(StoreRequest $request)
     {
         try {
-            $task = $this->service->store($request->all());
+            $task = $this->service->store($request->validated());
             return response()->json(['result' => 'success', 'task' => $task], 201);
         } catch (Throwable $th) {
             return $th;
@@ -45,7 +45,7 @@ class TaskController extends Controller
     public function update(UpdateRequest $request)
     {
         try {
-            return $this->service->addPrerequisitesToATask($request->all());
+            return $this->service->addPrerequisitesToATask($request->validated());
             return response()->json(['result' => 'success'], 200);
         } catch (Throwable $th) {
             // return $th;

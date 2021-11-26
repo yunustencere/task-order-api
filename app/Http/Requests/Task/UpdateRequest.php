@@ -17,8 +17,8 @@ class UpdateRequest extends FormRequest
     {
         return [
             'id' => ['required', 'numeric', 'exists:tasks,id'],
+            'prerequisites' => ['present', 'array'],
             'prerequisites.*' => ['sometimes', 'numeric', 'exists:tasks,id', 'different:id'],
-            'prerequisites' => ['required', 'array'],
         ];
     }
 

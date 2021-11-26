@@ -19,7 +19,7 @@ class StoreRequest extends FormRequest
         return [
             'title' => ['required', 'string'],
             'type' => ['required', 'string', Rule::in(['common_ops', 'invoice_ops', 'custom_ops'])],
-            'country' => ['required_if:type,common_ops', 'prohibited_unless:type,common_ops', 'string'],
+            'country' => ['required_if:type,custom_ops', 'prohibited_unless:type,custom_ops', 'string'],
             'amount.currency' => [
                 'required_if:type,invoice_ops', 'prohibited_unless:type,invoice_ops', 'string',
                 Rule::in(['€', '₺', '$', '£'])

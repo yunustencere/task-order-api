@@ -20,17 +20,15 @@ class TaskSeeder extends Seeder
         DB::table('tasks')->insert(array(
             0 =>
             array(
-                // "id" => "task_0",
                 "title" => "Task 0",
                 "type" => "common_ops",
-                "prerequisites" => json_encode([])
+                // "prerequisites" => json_encode([])
             ),
             1 =>
             array(
-                // "id" => "task_1",
                 "title" => "Task 1",
                 "type" => "common_ops",
-                "prerequisites" => json_encode([1])
+                "prerequisites" => json_encode([1]),
                 // "prerequisites" => [
                 //     "task_0"
                 // ]

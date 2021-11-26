@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "469af06c-ea03-4e24-a0ff-b935d981ba50",
+		"name": "forwardie Yunus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/task",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task"
+					]
+				},
+				"description": "just click send"
+			},
+			"response": []
+		},
+		{
+			"name": "store a task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"title 1\",\r\n    \"type\": \"invoice_ops\",\r\n    \"amount\": {\r\n        \"currency\": \"$\",\r\n        \"quantity\": 100\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/task",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task"
+					]
+				},
+				"description": "type: can only be \"invoice_ops\", \"common_ops\", \"custom_ops\".\r\ninvoice_ops: has to have \"amount\" as object.\r\ncustom_ops can have \"country\" as string\r\n\r\ncheck StoreRequest.php for more information"
+			},
+			"response": []
+		},
+		{
+			"name": "update a task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"prerequisites\": [1,2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/task/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task",
+						""
+					]
+				},
+				"description": "id: task id.\r\nprerequisites: array of task ids, you can only update its prerequisites"
+			},
+			"response": []
+		},
+		{
+			"name": "get tasks by order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/task/getByOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task",
+						"getByOrder"
+					]
+				},
+				"description": "recursively gets tasks from first to last as nested by checking their prerequisites"
+			},
+			"response": []
+		}
+	]
+}

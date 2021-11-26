@@ -70,7 +70,6 @@ class TaskService implements TaskServiceInterface
       }
     }
     return $result = array_values($result);
-    return $result;
   }
 
   private function getForwardTasks($currentTask)
@@ -78,8 +77,6 @@ class TaskService implements TaskServiceInterface
     $relatedTasks = array_filter($this->tasks, function ($task) use ($currentTask) {
       return in_array($currentTask['id'], $task['prerequisites']);
     });
-    // dd($relatedTasks);
-    // $currentTask['forward'] = $relatedTasks;
     $relatedTasks = array_map(
       function ($relatedTask) {
         $relatedTask['forward'] = [...$this->getForwardTasks($relatedTask)];
@@ -87,10 +84,6 @@ class TaskService implements TaskServiceInterface
       },
       $relatedTasks
     );
-
-    // foreach ($relatedTasks as $key => $relatedTask) {
-    //   $relatedTask['forward'] = $this->getForwardTasks($relatedTask);
-    // }
-    return array_values($relatedTasks ?? []);
+    return array_values($relatedTasks);
   }
 }
