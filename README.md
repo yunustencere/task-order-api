@@ -1,5 +1,5 @@
-## Quiz
-The app is simple laravel api uses some of its features like model, controller, service layer, validation by form requests, database seeding etc.
+## Task Order Api
+The app is simple laravel api uses some of its features like model, controller, service layer, validation by form requests, database seeding.
 
 ### Installation
 Clone the project
