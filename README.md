@@ -33,6 +33,7 @@ to seed the database with related entries.
 
 ### Endpoints
 
-Get all tasks
-get /api/task
+postman collection is available at the root directory of the project as 
+"forwardie_yunus.postman_collection.json"
+
 
