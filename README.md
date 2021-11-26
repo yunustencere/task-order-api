@@ -31,9 +31,18 @@ $ php artisan db:seed
 ```
 to seed the database with related entries.
 
+### To Run The App
+
+
+```
+$ php artisan serve
+```
+
 ### Endpoints
 
 postman collection is available at the root directory of the project as 
 "forwardie_yunus.postman_collection.json"
+
+or check api.php
 
 
