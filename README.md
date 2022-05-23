@@ -1,5 +1,5 @@
 ## Task Order Api
-The app is simple laravel api uses some of its features like model, controller, service layer, validation by form requests, database seeding.
+The app is implementation of a task schema knows as Freight Forwarding(One or more tasks need to be done before proceeding the others). A simple laravel api uses some of its features like model, controller, service layer, validation by form requests, database seeding.
 
 ### Installation
 Clone the project
